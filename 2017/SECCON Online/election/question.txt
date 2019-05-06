@@ -1,0 +1,7 @@
+Election
+
+Today is the vote day.
+Who would you like to be chairman?
+
+Host : 59.106.221.216
+Port : 28349

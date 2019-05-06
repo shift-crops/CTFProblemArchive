@@ -1,0 +1,8 @@
+This program behaves like a simple memcached.
+Each entry is managed in a tree structure based on the hash of the key.
+(Hash conflicts are not considered)
+
+Heap overflow
+When rewriting the contents of a previously registered key, if the requested size is less than the existing size, the program uses the same area.
+We use chunk size of heap to judge the size.
+Since size is calculated without considering PREV_INUSE, 1 byte overflow occurs.

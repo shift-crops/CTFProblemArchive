@@ -1,0 +1,13 @@
+Programs running as services accessed by users are very vulnerable.
+A simple stack overflow occurs in the initial question.
+Since it is possible to change the value of an arbitrary address, it is possible to avoid stack break detection.
+
+However, since the program is running under MVEEs, the attack does not succeed easily.
+The multiple same program is executed at the same time, and it is compared whether the behavior when the same input is given to each is consistent or not.
+Since output contents also have to match, address leak can not be done.
+
+A vulnerability of Integer Overflow exists in this MVEEs monitor.
+When the service process calls a read or write system call, the monitor reserves the buffer with malloc by that size + 1.
+When a system call is called by giving -1 as an argument, malloc(0) is called on the monitor, and a chunk of 0×20 bytes is allocated.
+However, execution of I/O is handled as size (unsigned)(-1).
+Therefore, a heap overflow occurs.

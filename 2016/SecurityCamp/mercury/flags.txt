@@ -1,0 +1,6 @@
+pi:	FLAG{r45pb14n_d3f4ul7_u53r}
+(x86:	FLAG{1451520})
+(amd64:	FLAG{51mpl3_c1ph3r_w17h_57r4ng3_m3ch4n15m})
+
+mercury1:	FLAG{5ud0_w17h_n0p455wd}
+mercury2:	FLAG{r37urn_0r13n73d_pr0gr4mm1ng_0n_ARM}
