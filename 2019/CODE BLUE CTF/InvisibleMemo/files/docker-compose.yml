@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  exploit:
+    image: registry.ctf.codeblue.jp:5000/teamXX/invisible_memo-exploit
+    depends_on:
+      - challenge
+      - flag-submit
+  challenge:
+    image: registry.ctf.codeblue.jp:5000/problems/invisible_memo-challenge
+    volumes:
+      - "./flag:/flag"
+    expose:
+      - "4296"
+    environment:
+      - TRIAL_NUMBER=1
+  flag-submit:
+    image: registry.ctf.codeblue.jp:5000/public/flag-submit
+    volumes:
+      - "./submit_flag:/flag"
+    expose:
+      - "1337"
