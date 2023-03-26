@@ -1,0 +1,49 @@
+---
+apiVersion: lmtd.lifememory.team/v1beta1
+kind: Challenge
+labels:
+  # [この設定固有の識別子の設定]
+  # 通常は challenge-(問題名) が指定されます。
+  importer.lmtd.lifememory.team/unique-key: challenge-babyfile
+spec:
+  # [問題名の設定]
+  name: babyfile
+
+  # タグ
+  tag:
+    - author:shift-crops
+
+  # [表示順の設定]
+  # ※ この値については何もしなくて大丈夫です
+  order: 3
+
+  # [公開設定]
+  # ※ この値については何もしなくて大丈夫です
+  isPublic: true
+
+  # [ジャンルの設定]
+  ownerCategoryUniqueKey: category-pwnable
+
+  # [配布ファイルの設定]
+  dists:
+  - name: "babyfile"
+    uploadType: dirCompress
+    replaceKey: "<FILES>"
+
+  # [問題文の設定]
+  description: |
+    Play with FILE structure!!
+
+    ```
+    nc babyfile.seccon.games 3157
+    ```
+
+    <FILES>
+
+  server:
+    ports:
+      - 3157
+    protocol: tcp
+    docker: true
+    plan: small
+    tags: ["filter:plz"]

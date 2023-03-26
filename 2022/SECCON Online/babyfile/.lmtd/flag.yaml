@@ -1,0 +1,17 @@
+---
+apiVersion: lmtd.lifememory.team/v1beta1
+kind: Flag
+labels:
+  # [この設定固有の識別子の設定]
+  # 通常は flag-(問題名) が指定されます。
+  importer.lmtd.lifememory.team/unique-key: flag-babyfile
+spec:
+  # [設定対象の設定]
+  ownerChallengeUniqueKey: challenge-babyfile
+
+  # [フラグの設定]
+  content: SECCON{r34d_4nd_wr173_4nywh3r3_w17h_f1l3_57ruc7ur3}
+
+  # [初期得点の設定]
+  # 変更しないでください。
+  point: 500
